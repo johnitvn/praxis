@@ -1,0 +1,295 @@
+# Praxis Relationships Registry
+#
+# Cross-cutting relationships between methods, patterns, domains, and concepts.
+# Used by the router for method composition and substitution.
+
+relationships:
+
+  # ── Method Compositions ─────────────────────────────────────────
+  # Chains: ordered sequences of methods that work well together
+  chains:
+    - id: diagnose-chain
+      description: Standard diagnostic reasoning chain
+      sequence:
+        - abductive-reasoning
+        - bayesian-reasoning
+        - causal-reasoning
+      for: diagnosis
+
+    - id: decide-under-uncertainty-chain
+      description: Decision chain for uncertain environments
+      sequence:
+        - scenario-planning
+        - decision-under-uncertainty
+        - sensitivity-analysis
+        - premortem
+      for: high-stakes-decisions
+
+    - id: design-chain
+      description: Design reasoning chain
+      sequence:
+        - constraint-analysis
+        - divergent-thinking
+        - convergent-thinking
+        - trade-off-analysis
+      for: design
+
+    - id: forecast-chain
+      description: Forecasting chain
+      sequence:
+        - decomposition
+        - reference-class-forecasting
+        - bayesian-reasoning
+        - calibration
+      for: forecasting
+
+    - id: architecture-decision-chain
+      description: Architecture decision reasoning chain
+      sequence:
+        - problem-framing
+        - constraint-analysis
+        - systems-thinking
+        - trade-off-analysis
+        - risk-analysis
+        - premortem
+      for: architecture-decisions
+
+    - id: research-chain
+      description: Research reasoning chain
+      sequence:
+        - literature-review
+        - evidence-evaluation
+        - evidence-synthesis
+        - uncertainty-quantification
+      for: research
+
+    - id: debug-chain
+      description: Debugging reasoning chain
+      sequence:
+        - abductive-reasoning
+        - causal-reasoning
+        - hypothesis-testing
+      for: debugging
+
+    - id: strategy-chain
+      description: Strategic reasoning chain
+      sequence:
+        - strategic-analysis
+        - scenario-planning
+        - game-theoretic-analysis
+        - option-reasoning
+        - decision-under-uncertainty
+      for: strategy
+
+  # ── Method Substitutions ────────────────────────────────────────
+  # When method A is unavailable, method B can substitute
+  substitutions:
+    - primary: bayesian-reasoning
+      substitute: frequentist-reasoning
+      when: priors are not elicitable
+      tradeoff: less explicit about uncertainty
+
+    - primary: causal-graph-reasoning
+      substitute: causal-discovery
+      when: causal graph is unknown
+      tradeoff: less precise, equivalence classes
+
+    - primary: expected-utility
+      substitute: multi-criteria-decision
+      when: utilities are incommensurable
+      tradeoff: less axiomatic
+
+    - primary: constrained-optimization
+      substitute: satisficing
+      when: problem is not formalizable
+      tradeoff: may miss optimum
+
+    - primary: multi-criteria-decision
+      substitute: trade-off-analysis
+      when: criteria weight elicitation is not possible
+      tradeoff: less structured
+
+  # ── Method Conflicts ────────────────────────────────────────────
+  # Methods that should not be used together or have conflicting assumptions
+  conflicts:
+    - methods:
+        - deductive-reasoning
+        - bayesian-reasoning
+      reason: deductive reasoning assumes certainty; Bayesian assumes uncertainty
+      resolution: use deductive for logical structure, Bayesian for empirical claims
+
+    - methods:
+        - satisficing
+        - constrained-optimization
+      reason: satisficing stops at adequate; optimization seeks best
+      resolution: use satisficing to bound the search space, then optimize within it
+
+    - methods:
+        - game-theoretic-analysis
+        - design-thinking
+      reason: game theory assumes strategic rationality; design thinking assumes empathy
+      resolution: use game theory for competitive dynamics, design thinking for user needs
+
+  # ── Domain-Method Mappings ──────────────────────────────────────
+  domain_methods:
+    - domain: software-engineering
+      primary_methods:
+        - debugging
+        - decomposition
+        - trade-off-analysis
+      secondary_methods:
+        - systems-thinking
+        - risk-analysis
+
+    - domain: infrastructure
+      primary_methods:
+        - systems-thinking
+        - risk-analysis
+        - fault-tree-analysis
+      secondary_methods:
+        - contingency-planning
+        - network-analysis
+
+    - domain: data-science
+      primary_methods:
+        - statistical-reasoning
+        - bayesian-reasoning
+        - causal-reasoning
+      secondary_methods:
+        - uncertainty-quantification
+        - calibration
+
+    - domain: product
+      primary_methods:
+        - design-thinking
+        - multi-criteria-decision
+        - trade-off-analysis
+      secondary_methods:
+        - divergent-thinking
+        - convergent-thinking
+
+    - domain: business-strategy
+      primary_methods:
+        - strategic-analysis
+        - scenario-planning
+        - decision-under-uncertainty
+      secondary_methods:
+        - game-theoretic-analysis
+        - option-reasoning
+
+    - domain: research
+      primary_methods:
+        - hypothesis-testing
+        - evidence-evaluation
+        - bayesian-reasoning
+      secondary_methods:
+        - evidence-synthesis
+        - calibration
+
+    - domain: security
+      primary_methods:
+        - threat-modeling
+        - risk-analysis
+        - adversarial-reasoning
+      secondary_methods:
+        - fault-tree-analysis
+        - game-theoretic-analysis
+
+    - domain: engineering-design
+      primary_methods:
+        - constraint-analysis
+        - constrained-optimization
+        - trade-off-analysis
+      secondary_methods:
+        - risk-analysis
+        - fault-tree-analysis
+
+    - domain: policy
+      primary_methods:
+        - cost-benefit-analysis
+        - multi-criteria-decision
+        - scenario-planning
+      secondary_methods:
+        - systems-thinking
+        - trade-off-analysis
+
+    - domain: crisis
+      primary_methods:
+        - satisficing
+        - decision-under-uncertainty
+        - premortem
+      secondary_methods:
+        - risk-analysis
+        - contingency-planning
+
+  # ── Pattern-Method Mappings ─────────────────────────────────────
+  # Which methods are typically used in which patterns
+  pattern_methods:
+    - pattern: hypothesis-driven-diagnosis
+      methods:
+        - abductive-reasoning
+        - bayesian-reasoning
+        - causal-reasoning
+
+    - pattern: structured-decision
+      methods:
+        - multi-criteria-decision
+        - expected-utility
+        - sensitivity-analysis
+
+    - pattern: trade-off-analysis-pattern
+      methods:
+        - trade-off-analysis
+        - multi-criteria-decision
+        - constraint-analysis
+
+    - pattern: iterative-design
+      methods:
+        - design-thinking
+        - divergent-thinking
+        - convergent-thinking
+
+    - pattern: literature-review
+      methods:
+        - evidence-evaluation
+        - argument-analysis
+
+    - pattern: root-cause-analysis
+      methods:
+        - causal-reasoning
+        - fault-tree-analysis
+
+  # ── Escalation Paths ────────────────────────────────────────────
+  # When a method is insufficient, what to escalate to
+  escalations:
+    - from: satisficing
+      to: multi-criteria-decision
+      when: adequate solution is not satisfactory
+
+    - from: single-method
+      to: method-composition
+      when: problem crosses boundaries
+
+    - from: deterministic-analysis
+      to: probabilistic-analysis
+      when: uncertainty is material
+
+    - from: static-analysis
+      to: dynamic-analysis
+      when: time dynamics matter
+
+    - from: independent-analysis
+      to: systems-thinking
+      when: interconnections matter
+
+    - from: point-estimate
+      to: uncertainty-quantification
+      when: precision of estimate matters
+
+    - from: individual-reasoning
+      to: adversarial-review
+      when: stakes are high
+
+    - from: current-knowledge
+      to: information-gathering
+      when: knowledge gaps are material

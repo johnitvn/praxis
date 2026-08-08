@@ -1,0 +1,47 @@
+# Praxis Concepts
+
+Canonical concepts that define the reasoning domain.
+
+## Core Concepts
+
+### Problem
+A situation where the current state differs from a desired state and the path from current to desired is not obvious.
+
+### Reasoning
+The process of drawing conclusions, making inferences, or forming judgments based on evidence, premises, or principles.
+
+### Method
+A systematic procedure for reasoning about a specific class of problems.
+
+### Pattern
+A recurring structure for applying one or more methods to a problem class.
+
+### Workflow
+A composed sequence of methods and patterns applied to achieve a specific outcome.
+
+### Meta-Reasoning
+Reasoning about reasoning — monitoring, evaluating, and regulating one's own cognitive processes.
+
+### Evidence
+Information that bears on the truth or falsity of a claim.
+
+### Uncertainty
+The state of having incomplete or imperfect information. Includes aleatoric (irreducible randomness), epistemic (knowable but unknown), and Knightian (immeasurable) uncertainty.
+
+### Assumption
+A proposition accepted as true without proof for the purpose of reasoning.
+
+### Constraint
+A limitation or boundary condition that restricts possible solutions or actions.
+
+### Stake
+What is at risk — the consequences of being wrong or making a suboptimal decision.
+
+### Verification
+The process of checking whether reasoning or conclusions are correct.
+
+### Calibration
+The alignment between stated confidence and actual accuracy.
+
+### Composition
+The deliberate combination of multiple reasoning methods to address a problem that no single method can handle.

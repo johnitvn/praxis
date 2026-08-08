@@ -1,0 +1,1312 @@
+# Praxis Methods Registry
+#
+# Every reasoning method in the skill.
+# This is the canonical source for method selection and discovery.
+
+methods:
+
+  # ── Logical Reasoning ───────────────────────────────────────────
+  - id: deductive-reasoning
+    category: logical
+    best_for:
+      - certain premises
+      - formal systems
+      - necessity proofs
+    requires:
+      - premises
+      - inference rules
+    produces:
+      - necessary conclusions
+    strengths:
+      - truth-preserving
+      - definitive
+    limitations:
+      - requires true premises
+      - limited to formal domains
+    combine_with:
+      - inductive-reasoning
+      - abductive-reasoning
+    avoid_when:
+      - premises are uncertain
+      - domain is informal
+
+  - id: inductive-reasoning
+    category: logical
+    best_for:
+      - pattern discovery
+      - generalization
+      - empirical domains
+    requires:
+      - observations
+      - pattern sensitivity
+    produces:
+      - probable generalizations
+    strengths:
+      - learns from data
+      - extends knowledge
+    limitations:
+      - conclusions are not certain
+      - sample bias
+    combine_with:
+      - deductive-reasoning
+      - statistical-reasoning
+    avoid_when:
+      - sample is unrepresentative
+      - certainty is required
+
+  - id: abductive-reasoning
+    category: logical
+    best_for:
+      - explanation
+      - diagnosis
+      - hypothesis generation
+    requires:
+      - observations
+      - domain knowledge
+    produces:
+      - best explanation
+    strengths:
+      - handles incomplete information
+      - generates hypotheses
+    limitations:
+      - multiple explanations possible
+      - dependent on domain knowledge quality
+    combine_with:
+      - bayesian-reasoning
+      - causal-reasoning
+    avoid_when:
+      - domain knowledge is absent
+      - explanation must be certain
+
+  - id: analogical-reasoning
+    category: logical
+    best_for:
+      - novel problems
+      - cross-domain transfer
+      - creative insight
+    requires:
+      - source domain
+      - target domain
+      - structural mapping
+    produces:
+      - transferred insights
+    strengths:
+      - handles novelty
+      - cross-domain insight
+    limitations:
+      - false analogies
+      - superficial similarity
+    combine_with:
+      - first-principles
+      - systems-thinking
+    avoid_when:
+      - domains are structurally dissimilar
+      - precision is required
+
+  - id: temporal-reasoning
+    category: logical
+    best_for:
+      - sequencing
+      - scheduling
+      - deadline analysis
+    requires:
+      - temporal constraints
+      - ordering relations
+    produces:
+      - valid sequences
+    strengths:
+      - handles concurrency
+      - detects cycles
+    limitations:
+      - requires precise constraints
+      - combinatorial explosion
+    combine_with:
+      - constraint-reasoning
+      - planning-methods
+    avoid_when:
+      - temporal constraints are loose
+
+  # ── Causal Reasoning ────────────────────────────────────────────
+  - id: causal-graph-reasoning
+    category: causal
+    best_for:
+      - intervention planning
+      - effect prediction
+      - confounding analysis
+    requires:
+      - causal graph
+      - conditional independence data
+    produces:
+      - causal effects
+      - intervention predictions
+    strengths:
+      - explicit causal structure
+      - handles confounding
+    limitations:
+      - requires causal graph
+      - graph may be incomplete
+    combine_with:
+      - counterfactual-reasoning
+      - bayesian-reasoning
+    avoid_when:
+      - causal structure is unknown
+      - system is non-modular
+
+  - id: counterfactual-reasoning
+    category: causal
+    best_for:
+      - what-if analysis
+      - attribution
+      - fairness
+    requires:
+      - causal model
+      - actual outcome
+    produces:
+      - counterfactual outcomes
+    strengths:
+      - answers "what if" questions
+      - precise attribution
+    limitations:
+      - requires strong causal model
+      - untestable in many cases
+    combine_with:
+      - causal-graph-reasoning
+      - intervention-analysis
+    avoid_when:
+      - causal model is weak
+      - counterfactual is ill-defined
+
+  - id: intervention-analysis
+    category: causal
+    best_for:
+      - policy evaluation
+      - experiment design
+      - action planning
+    requires:
+      - causal model
+      - intervention specification
+    produces:
+      - predicted intervention effects
+    strengths:
+      - actionable conclusions
+      - distinguishes correlation from causation
+    limitations:
+      - requires valid instruments or randomization
+      - confounding may remain
+    combine_with:
+      - causal-graph-reasoning
+      - experimental-design
+    avoid_when:
+      - intervention is not well-defined
+      - confounding is uncontrolled
+
+  - id: causal-discovery
+    category: causal
+    best_for:
+      - unknown causal structure
+      - observational data
+      - exploratory analysis
+    requires:
+      - data
+      - conditional independence tests
+    produces:
+      - candidate causal structures
+    strengths:
+      - learns structure from data
+      - handles observational data
+    limitations:
+      - equivalence classes
+      - requires assumptions
+    combine_with:
+      - causal-graph-reasoning
+      - statistical-reasoning
+    avoid_when:
+      - data is insufficient
+      - assumptions are violated
+
+  # ── Probabilistic Reasoning ─────────────────────────────────────
+  - id: bayesian-reasoning
+    category: probabilistic
+    best_for:
+      - uncertain evidence
+      - competing hypotheses
+      - sequential updating
+    requires:
+      - hypotheses
+      - prior beliefs
+      - evidence likelihoods
+    produces:
+      - posterior probabilities
+    strengths:
+      - explicit uncertainty
+      - sequential updating
+      - coherent
+    limitations:
+      - prior sensitivity
+      - computational complexity
+    combine_with:
+      - hypothesis-testing
+      - evidence-triangulation
+      - sensitivity-analysis
+    avoid_when:
+      - evidence is deterministic
+      - probabilities are fabricated
+      - priors are arbitrary
+
+  - id: frequentist-reasoning
+    category: probabilistic
+    best_for:
+      - repeated sampling
+      - error control
+      - significance testing
+    requires:
+      - sampling model
+      - significance threshold
+    produces:
+      - p-values
+      - confidence intervals
+    strengths:
+      - objective error rates
+      - well-established
+    limitations:
+      - misinterpretation common
+      - arbitrary thresholds
+    combine_with:
+      - bayesian-reasoning
+      - effect-size-analysis
+    avoid_when:
+      - single event
+      - prior information is critical
+
+  - id: statistical-reasoning
+    category: probabilistic
+    best_for:
+      - data analysis
+      - estimation
+      - inference from samples
+    requires:
+      - data
+      - statistical model
+    produces:
+      - estimates
+      - uncertainty intervals
+    strengths:
+      - handles variability
+      - quantifies uncertainty
+    limitations:
+      - model dependence
+      - assumptions required
+    combine_with:
+      - causal-reasoning
+      - bayesian-reasoning
+    avoid_when:
+      - data is absent
+      - model assumptions are violated
+
+  - id: uncertainty-quantification
+    category: probabilistic
+    best_for:
+      - risk assessment
+      - robust decisions
+      - model validation
+    requires:
+      - uncertainty sources
+      - model
+    produces:
+      - uncertainty bounds
+      - confidence distributions
+    strengths:
+      - explicit uncertainty
+      - supports robust decisions
+    limitations:
+      - requires enumeration of uncertainties
+      - may be computationally expensive
+    combine_with:
+      - sensitivity-analysis
+      - risk-analysis
+    avoid_when:
+      - uncertainty sources are unknowable
+
+  # ── First Principles ────────────────────────────────────────────
+  - id: decomposition
+    category: first-principles
+    best_for:
+      - complex problems
+      - novel domains
+      - fundamental understanding
+    requires:
+      - problem definition
+      - domain knowledge
+    produces:
+      - fundamental components
+    strengths:
+      - avoids assumptions
+      - builds from ground truth
+    limitations:
+      - requires deep domain knowledge
+      - can be slow
+    combine_with:
+      - systems-thinking
+      - deductive-reasoning
+    avoid_when:
+      - problem is simple
+      - fundamentals are not accessible
+
+  - id: fundamental-analysis
+    category: first-principles
+    best_for:
+      - challenging assumptions
+      - innovation
+      - deep understanding
+    requires:
+      - domain
+      - willingness to question everything
+    produces:
+      - foundational truths
+    strengths:
+      - bypasses inherited assumptions
+      - enables radical innovation
+    limitations:
+      - time-intensive
+      - may rediscover known results
+    combine_with:
+      - decomposition
+      - assumption-checking
+    avoid_when:
+      - speed is critical
+      - existing solutions are adequate
+
+  - id: constraint-analysis
+    category: first-principles
+    best_for:
+      - design problems
+      - optimization
+      - feasibility assessment
+    requires:
+      - constraints
+      - requirements
+    produces:
+      - feasible region
+      - binding constraints
+    strengths:
+      - defines solution space
+      - identifies critical constraints
+    limitations:
+      - may miss hidden constraints
+      - constraints may change
+    combine_with:
+      - optimization-methods
+      - trade-off-analysis
+    avoid_when:
+      - constraints are unknown
+      - problem is unconstrained
+
+  # ── Systems Thinking ────────────────────────────────────────────
+  - id: systems-thinking
+    category: systems
+    best_for:
+      - interconnected problems
+      - emergent behavior
+      - long-term dynamics
+    requires:
+      - system boundary
+      - components
+      - relationships
+    produces:
+      - system map
+      - leverage points
+    strengths:
+      - captures interconnections
+      - reveals emergent behavior
+    limitations:
+      - boundary choice is subjective
+      - can be overly complex
+    combine_with:
+      - causal-reasoning
+      - feedback-analysis
+    avoid_when:
+      - problem is isolated
+      - system is simple
+
+  - id: feedback-analysis
+    category: systems
+    best_for:
+      - dynamic systems
+      - growth/decay patterns
+      - stability analysis
+    requires:
+      - feedback loops
+      - system dynamics
+    produces:
+      - stability assessment
+      - intervention points
+    strengths:
+      - explains counterintuitive behavior
+      - identifies leverage
+    limitations:
+      - requires dynamic understanding
+      - delays complicate analysis
+    combine_with:
+      - systems-thinking
+      - causal-graph-reasoning
+    avoid_when:
+      - system is static
+      - feedback is negligible
+
+  - id: network-analysis
+    category: systems
+    best_for:
+      - relational problems
+      - propagation
+      - influence mapping
+    requires:
+      - nodes
+      - edges
+      - topology
+    produces:
+      - centrality measures
+      - community structure
+    strengths:
+      - captures relational structure
+      - identifies key nodes
+    limitations:
+      - requires complete network data
+      - static snapshots
+    combine_with:
+      - systems-thinking
+      - risk-analysis
+    avoid_when:
+      - relationships are not network-like
+      - data is unavailable
+
+  - id: emergence-analysis
+    category: systems
+    best_for:
+      - complex adaptive systems
+      - unexpected system behavior
+      - self-organization
+    requires:
+      - micro-level rules
+      - agent behaviors
+    produces:
+      - emergent macro patterns
+    strengths:
+      - explains unexpected behavior
+      - bottom-up insight
+    limitations:
+      - hard to predict
+      - requires simulation often
+    combine_with:
+      - systems-thinking
+      - simulation
+    avoid_when:
+      - system is simple
+      - behavior is additive
+
+  # ── Creative Reasoning ──────────────────────────────────────────
+  - id: divergent-thinking
+    category: creative
+    best_for:
+      - idea generation
+      - option exploration
+      - breaking mental sets
+    requires:
+      - problem statement
+      - suspension of judgment
+    produces:
+      - many ideas
+      - novel options
+    strengths:
+      - generates quantity
+      - breaks fixation
+    limitations:
+      - quality varies
+      - requires subsequent filtering
+    combine_with:
+      - convergent-thinking
+      - lateral-thinking
+    avoid_when:
+      - single correct answer exists
+      - time is extremely limited
+
+  - id: convergent-thinking
+    category: creative
+    best_for:
+      - selecting among options
+      - evaluation
+      - refinement
+    requires:
+      - candidate solutions
+      - criteria
+    produces:
+      - selected solution
+    strengths:
+      - systematic selection
+      - quality filtering
+    limitations:
+      - may miss unconventional solutions
+      - criteria-dependent
+    combine_with:
+      - divergent-thinking
+      - decision-methods
+    avoid_when:
+      - criteria are unclear
+      - solution space is unexplored
+
+  - id: lateral-thinking
+    category: creative
+    best_for:
+      - stuck problems
+      - reframing
+      - breakthrough
+    requires:
+      - problem
+      - willingness to reframe
+    produces:
+      - novel approaches
+    strengths:
+      - breaks impasses
+      - reframes problems
+    limitations:
+      - unpredictable
+      - may seem illogical
+    combine_with:
+      - divergent-thinking
+      - first-principles
+    avoid_when:
+      - conventional approach works
+      - problem is routine
+
+  - id: design-thinking
+    category: creative
+    best_for:
+      - human-centered problems
+      - ill-defined problems
+      - innovation
+    requires:
+      - empathy
+      - iteration
+      - prototyping
+    produces:
+      - human-centered solutions
+    strengths:
+      - user-focused
+      - iterative refinement
+    limitations:
+      - time-intensive
+      - requires user access
+    combine_with:
+      - divergent-thinking
+      - convergent-thinking
+      - systems-thinking
+    avoid_when:
+      - problem is purely technical
+      - users are inaccessible
+
+  # ── Decision Methods ────────────────────────────────────────────
+  - id: expected-utility
+    category: decision
+    best_for:
+      - explicit outcomes
+      - known probabilities
+      - rational choice
+    requires:
+      - options
+      - outcome probabilities
+      - utilities
+    produces:
+      - optimal choice
+    strengths:
+      - axiomatic foundation
+      - consistent
+    limitations:
+      - utility elicitation
+      - probability estimation
+    combine_with:
+      - sensitivity-analysis
+      - risk-analysis
+    avoid_when:
+      - probabilities are unknown
+      - utilities are incommensurable
+
+  - id: multi-criteria-decision
+    category: decision
+    best_for:
+      - multiple objectives
+      - trade-offs
+      - stakeholder alignment
+    requires:
+      - options
+      - criteria
+      - weights
+    produces:
+      - ranked options
+    strengths:
+      - handles multiple objectives
+      - transparent
+    limitations:
+      - weight elicitation
+      - criteria interaction
+    combine_with:
+      - trade-off-analysis
+      - sensitivity-analysis
+    avoid_when:
+      - single criterion dominates
+      - criteria are incommensurable
+
+  - id: decision-under-uncertainty
+    category: decision
+    best_for:
+      - unknown probabilities
+      - high stakes
+      - robust decisions
+    requires:
+      - options
+      - possible states
+      - (possibly) payoffs
+    produces:
+      - robust choice
+      - regret bounds
+    strengths:
+      - handles deep uncertainty
+      - no probability required
+    limitations:
+      - conservative
+      - may miss opportunities
+    combine_with:
+      - scenario-planning
+      - risk-analysis
+    avoid_when:
+      - probabilities are well-calibrated
+      - stakes are low
+
+  - id: cost-benefit-analysis
+    category: decision
+    best_for:
+      - resource allocation
+      - policy evaluation
+      - go/no-go decisions
+    requires:
+      - costs
+      - benefits
+      - time horizon
+    produces:
+      - net benefit
+      - benefit-cost ratio
+    strengths:
+      - quantitative
+      - comparable across options
+    limitations:
+      - monetization difficulties
+      - distributional blindness
+    combine_with:
+      - sensitivity-analysis
+      - risk-analysis
+    avoid_when:
+      - costs/benefits are unquantifiable
+      - distributional effects matter
+
+  # ── Strategic Reasoning ─────────────────────────────────────────
+  - id: game-theoretic-analysis
+    category: strategic
+    best_for:
+      - interdependent decisions
+      - competitive situations
+      - mechanism design
+    requires:
+      - players
+      - strategies
+      - payoffs
+    produces:
+      - equilibrium strategies
+    strengths:
+      - models interdependence
+      - predicts strategic behavior
+    limitations:
+      - rationality assumptions
+      - equilibrium multiplicity
+    combine_with:
+      - scenario-planning
+      - decision-under-uncertainty
+    avoid_when:
+      - decisions are independent
+      - players are not strategic
+
+  - id: scenario-planning
+    category: strategic
+    best_for:
+      - long-term planning
+      - high uncertainty
+      - strategy robustness
+    requires:
+      - key uncertainties
+      - driving forces
+    produces:
+      - multiple scenarios
+      - robust strategies
+    strengths:
+      - handles deep uncertainty
+      - challenges assumptions
+    limitations:
+      - scenario quality varies
+      - can be overwhelming
+    combine_with:
+      - decision-under-uncertainty
+      - risk-analysis
+    avoid_when:
+      - future is predictable
+      - short time horizon
+
+  - id: strategic-analysis
+    category: strategic
+    best_for:
+      - competitive positioning
+      - market analysis
+      - capability assessment
+    requires:
+      - environment
+      - capabilities
+      - competitors
+    produces:
+      - strategic position
+      - options
+    strengths:
+      - structured
+      - considers competition
+    limitations:
+      - static analysis
+      - assumptions about rationality
+    combine_with:
+      - scenario-planning
+      - systems-thinking
+    avoid_when:
+      - competition is irrelevant
+      - environment is stable
+
+  - id: option-reasoning
+    category: strategic
+    best_for:
+      - irreversible decisions
+      - sequential decisions
+      - flexibility valuation
+    requires:
+      - decision tree
+      - uncertainty
+      - flexibility
+    produces:
+      - option value
+      - optimal timing
+    strengths:
+      - values flexibility
+      - handles irreversibility
+    limitations:
+      - requires probability estimates
+      - complex for many options
+    combine_with:
+      - decision-under-uncertainty
+      - scenario-planning
+    avoid_when:
+      - decisions are fully reversible
+      - no flexibility exists
+
+  # ── Optimization ────────────────────────────────────────────────
+  - id: constrained-optimization
+    category: optimization
+    best_for:
+      - resource allocation
+      - design optimization
+      - scheduling
+    requires:
+      - objective function
+      - constraints
+      - decision variables
+    produces:
+      - optimal solution
+    strengths:
+      - finds best solution
+      - handles constraints
+    limitations:
+      - requires formal model
+      - local optima
+    combine_with:
+      - sensitivity-analysis
+      - trade-off-analysis
+    avoid_when:
+      - problem is not formalizable
+      - objectives conflict
+
+  - id: multi-objective-optimization
+    category: optimization
+    best_for:
+      - conflicting objectives
+      - trade-off exploration
+      - design space exploration
+    requires:
+      - multiple objectives
+      - decision variables
+    produces:
+      - Pareto frontier
+    strengths:
+      - reveals trade-offs
+      - no artificial weighting
+    limitations:
+      - computational complexity
+      - frontier interpretation
+    combine_with:
+      - multi-criteria-decision
+      - trade-off-analysis
+    avoid_when:
+      - single objective exists
+      - objectives are not quantifiable
+
+  - id: satisficing
+    category: optimization
+    best_for:
+      - bounded rationality
+      - time pressure
+      - adequate solutions
+    requires:
+      - aspiration levels
+      - options
+    produces:
+      - satisfactory solution
+    strengths:
+      - fast
+      - realistic
+    limitations:
+      - may miss better solutions
+      - aspiration-dependent
+    combine_with:
+      - stopping-criteria
+      - decision-methods
+    avoid_when:
+      - optimality is critical
+      - time is abundant
+
+  - id: trade-off-analysis
+    category: optimization
+    best_for:
+      - conflicting objectives
+      - design decisions
+      - stakeholder negotiation
+    requires:
+      - objectives
+      - options
+    produces:
+      - trade-off curves
+      - dominated options
+    strengths:
+      - clarifies choices
+      - removes dominated options
+    limitations:
+      - requires quantifiable objectives
+      - may oversimplify
+    combine_with:
+      - multi-criteria-decision
+      - multi-objective-optimization
+    avoid_when:
+      - objectives are not comparable
+      - single objective
+
+  # ── Risk ────────────────────────────────────────────────────────
+  - id: risk-analysis
+    category: risk
+    best_for:
+      - uncertain outcomes
+      - safety-critical decisions
+      - investment decisions
+    requires:
+      - threats
+      - vulnerabilities
+      - impacts
+    produces:
+      - risk matrix
+      - risk priorities
+    strengths:
+      - structured
+      - prioritizes
+    limitations:
+      - unknown unknowns
+      - estimation errors
+    combine_with:
+      - uncertainty-quantification
+      - decision-under-uncertainty
+    avoid_when:
+      - risks are well-known
+      - stakes are negligible
+
+  - id: premortem
+    category: risk
+    best_for:
+      - plan validation
+      - decision quality
+      - overconfidence
+    requires:
+      - plan or decision
+      - imagination
+    produces:
+      - failure modes
+      - mitigations
+    strengths:
+      - counters overconfidence
+      - prospective hindsight
+    limitations:
+      - imagination-limited
+      - may generate noise
+    combine_with:
+      - risk-analysis
+      - scenario-planning
+    avoid_when:
+      - plan is trivial
+      - failure is inconsequential
+
+  - id: threat-modeling
+    category: risk
+    best_for:
+      - security analysis
+      - adversarial contexts
+      - system design
+    requires:
+      - system
+      - adversary model
+      - assets
+    produces:
+      - threat list
+      - mitigations
+    strengths:
+      - adversary-aware
+      - systematic
+    limitations:
+      - adversary model uncertainty
+      - evolving threats
+    combine_with:
+      - risk-analysis
+      - game-theoretic-analysis
+    avoid_when:
+      - no adversary exists
+      - system is not attackable
+
+  - id: fault-tree-analysis
+    category: risk
+    best_for:
+      - reliability
+      - safety engineering
+      - failure analysis
+    requires:
+      - top event
+      - component failure modes
+    produces:
+      - failure paths
+      - probabilities
+    strengths:
+      - systematic
+      - quantitative
+    limitations:
+      - requires failure data
+      - combinatorial explosion
+    combine_with:
+      - risk-analysis
+      - causal-reasoning
+    avoid_when:
+      - failure modes are unknown
+      - system is simple
+
+  # ── Planning ────────────────────────────────────────────────────
+  - id: hierarchical-planning
+    category: planning
+    best_for:
+      - complex goals
+      - decomposable objectives
+      - multi-level planning
+    requires:
+      - goal
+      - decomposition
+    produces:
+      - plan hierarchy
+    strengths:
+      - handles complexity
+      - reusable sub-plans
+    limitations:
+      - decomposition may be wrong
+      - interactions between levels
+    combine_with:
+      - decomposition
+      - contingency-planning
+    avoid_when:
+      - goal is simple
+      - decomposition is not possible
+
+  - id: contingency-planning
+    category: planning
+    best_for:
+      - uncertain environments
+      - high-stakes plans
+      - resilience
+    requires:
+      - base plan
+      - possible disruptions
+    produces:
+      - contingency plans
+    strengths:
+      - robust to disruptions
+      - prepared for surprises
+    limitations:
+      - cannot cover everything
+      - maintenance burden
+    combine_with:
+      - scenario-planning
+      - risk-analysis
+    avoid_when:
+      - environment is stable
+      - disruptions are predictable
+
+  - id: resource-planning
+    category: planning
+    best_for:
+      - resource-constrained projects
+      - capacity planning
+      - allocation
+    requires:
+      - resources
+      - demands
+      - constraints
+    produces:
+      - feasible allocation
+    strengths:
+      - handles constraints
+      - identifies bottlenecks
+    limitations:
+      - requires accurate estimates
+      - static
+    combine_with:
+      - constrained-optimization
+      - scheduling
+    avoid_when:
+      - resources are abundant
+      - constraints are loose
+
+  - id: scheduling
+    category: planning
+    best_for:
+      - time-constrained tasks
+      - dependencies
+      - deadline management
+    requires:
+      - tasks
+      - durations
+      - dependencies
+    produces:
+      - schedule
+      - critical path
+    strengths:
+      - identifies critical path
+      - handles dependencies
+    limitations:
+      - duration uncertainty
+      - resource constraints
+    combine_with:
+      - resource-planning
+      - temporal-reasoning
+    avoid_when:
+      - tasks are independent
+      - timing is flexible
+
+  # ── Forecasting ─────────────────────────────────────────────────
+  - id: reference-class-forecasting
+    category: forecasting
+    best_for:
+      - unique projects
+      - cost estimation
+      - duration estimation
+    requires:
+      - reference class
+      - distribution data
+    produces:
+      - calibrated forecast
+    strengths:
+      - reduces optimism bias
+      - evidence-based
+    limitations:
+      - requires reference class
+      - class may not fit
+    combine_with:
+      - bayesian-reasoning
+      - calibration
+    avoid_when:
+      - no reference class exists
+      - project is truly novel
+
+  - id: calibration
+    category: forecasting
+    best_for:
+      - confidence assessment
+      - forecast quality
+      - overconfidence reduction
+    requires:
+      - forecasts
+      - outcomes
+    produces:
+      - calibration score
+    strengths:
+      - improves accuracy
+      - reveals overconfidence
+    limitations:
+      - requires outcome data
+      - slow feedback
+    combine_with:
+      - bayesian-reasoning
+      - metacognition
+    avoid_when:
+      - outcomes are unavailable
+      - calibration is not the goal
+
+  - id: ensemble-forecasting
+    category: forecasting
+    best_for:
+      - high-stakes forecasts
+      - diverse perspectives
+      - accuracy improvement
+    requires:
+      - multiple forecasts
+      - aggregation method
+    produces:
+      - combined forecast
+    strengths:
+      - better than individuals
+      - diverse error cancellation
+    limitations:
+      - requires multiple forecasts
+      - correlated errors
+    combine_with:
+      - calibration
+      - bayesian-reasoning
+    avoid_when:
+      - single forecaster is perfectly calibrated
+      - forecasts are correlated
+
+  - id: superforecasting
+    category: forecasting
+    best_for:
+      - geopolitical events
+      - long-term predictions
+      - probabilistic judgments
+    requires:
+      - question decomposition
+      - base rates
+      - Bayesian updating
+    produces:
+      - calibrated probabilities
+    strengths:
+      - empirically validated
+      - outperforms experts
+    limitations:
+      - requires training
+      - time-intensive
+    combine_with:
+      - bayesian-reasoning
+      - calibration
+      - decomposition
+    avoid_when:
+      - quick answer needed
+      - question is not decomposable
+
+  # ── Argumentation ───────────────────────────────────────────────
+  - id: argument-analysis
+    category: argumentation
+    best_for:
+      - evaluating claims
+      - detecting fallacies
+      - structured debate
+    requires:
+      - claim
+      - premises
+      - warrant
+    produces:
+      - argument strength
+      - fallacy identification
+    strengths:
+      - systematic
+      - fallacy-aware
+    limitations:
+      - requires explicit argument
+      - implicit premises
+    combine_with:
+      - evidence-evaluation
+      - deductive-reasoning
+    avoid_when:
+      - argument is not explicit
+      - domain is purely empirical
+
+  - id: evidence-evaluation
+    category: argumentation
+    best_for:
+      - source credibility
+      - evidence quality
+      - claim verification
+    requires:
+      - evidence
+      - source
+      - claim
+    produces:
+      - evidence strength
+      - credibility assessment
+    strengths:
+      - systematic
+      - source-aware
+    limitations:
+      - requires domain knowledge
+      - source access
+    combine_with:
+      - argument-analysis
+      - bayesian-reasoning
+    avoid_when:
+      - evidence is direct observation
+      - source is irrelevant
+
+  - id: fallacy-detection
+    category: argumentation
+    best_for:
+      - persuasive arguments
+      - rhetoric vs. reasoning
+      - critical thinking
+    requires:
+      - argument
+      - fallacy taxonomy
+    produces:
+      - fallacy identification
+    strengths:
+      - catches errors
+      - immunizes against rhetoric
+    limitations:
+      - false positives
+      - context-dependent
+    combine_with:
+      - argument-analysis
+      - self-critique
+    avoid_when:
+      - argument is purely formal
+      - context is cooperative
+
+  - id: dialectic
+    category: argumentation
+    best_for:
+      - truth-seeking
+      - resolving disagreement
+      - refining understanding
+    requires:
+      - thesis
+      - antithesis
+    produces:
+      - synthesis
+    strengths:
+      - truth-convergent
+      - handles disagreement
+    limitations:
+      - requires good-faith participants
+      - time-intensive
+    combine_with:
+      - argument-analysis
+      - perspective-switching
+    avoid_when:
+      - disagreement is not genuine
+      - quick resolution needed
