@@ -1,0 +1,167 @@
+# Praxis Domains Registry
+#
+# Problem domains that influence method selection.
+# Different domains have different default methods, evidence standards,
+# and failure modes.
+
+domains:
+
+  - id: software-engineering
+    name: Software Engineering
+    description: Design, construction, and maintenance of software systems
+    default_methods:
+      - debugging
+      - decomposition
+      - trade-off-analysis
+    evidence_standards:
+      - reproducible
+      - testable
+      - measurable
+    typical_failure_modes:
+      - complexity underestimation
+      - premature optimization
+      - missing edge cases
+
+  - id: infrastructure
+    name: Infrastructure / Operations
+    description: Design and operation of computing infrastructure
+    default_methods:
+      - systems-thinking
+      - risk-analysis
+      - fault-tree-analysis
+    evidence_standards:
+      - observable
+      - measurable
+      - historical data
+    typical_failure_modes:
+      - single points of failure
+      - cascade effects
+      - monitoring gaps
+
+  - id: data-science
+    name: Data Science / ML
+    description: Analysis of data and construction of predictive models
+    default_methods:
+      - statistical-reasoning
+      - bayesian-reasoning
+      - causal-reasoning
+    evidence_standards:
+      - statistical significance
+      - effect size
+      - cross-validation
+    typical_failure_modes:
+      - overfitting
+      - confounding
+      - data leakage
+
+  - id: product
+    name: Product Management
+    description: Product strategy, design, and prioritization
+    default_methods:
+      - multi-criteria-decision
+      - design-thinking
+      - trade-off-analysis
+    evidence_standards:
+      - user research
+      - experimentation
+      - market data
+    typical_failure_modes:
+      - building wrong thing
+      - feature creep
+      - ignoring user feedback
+
+  - id: business-strategy
+    name: Business Strategy
+    description: Strategic positioning, competitive analysis, resource allocation
+    default_methods:
+      - strategic-analysis
+      - scenario-planning
+      - decision-under-uncertainty
+    evidence_standards:
+      - market data
+      - competitive intelligence
+      - financial analysis
+    typical_failure_modes:
+      - extrapolating trends
+      - ignoring competition
+      - sunk cost fallacy
+
+  - id: research
+    name: Research
+    description: Systematic investigation to establish facts or principles
+    default_methods:
+      - hypothesis-testing
+      - evidence-evaluation
+      - bayesian-reasoning
+    evidence_standards:
+      - peer review
+      - reproducibility
+      - falsifiability
+    typical_failure_modes:
+      - confirmation bias
+      - p-hacking
+      - publication bias
+
+  - id: security
+    name: Security
+    description: Protection of systems from adversarial threats
+    default_methods:
+      - threat-modeling
+      - adversarial-reasoning
+      - risk-analysis
+    evidence_standards:
+      - penetration testing
+      - vulnerability assessment
+      - threat intelligence
+    typical_failure_modes:
+      - unknown unknowns
+      - assuming benign actors
+      - defense-in-depth gaps
+
+  - id: engineering-design
+    name: Engineering Design
+    description: Design of physical or engineered systems
+    default_methods:
+      - constraint-analysis
+      - constrained-optimization
+      - trade-off-analysis
+    evidence_standards:
+      - physical testing
+      - simulation
+      - standards compliance
+    typical_failure_modes:
+      - safety margin errors
+      - manufacturing variability
+      - environmental factors
+
+  - id: policy
+    name: Policy / Governance
+    description: Design and evaluation of policies, regulations, and governance
+    default_methods:
+      - cost-benefit-analysis
+      - multi-criteria-decision
+      - scenario-planning
+    evidence_standards:
+      - impact assessment
+      - stakeholder analysis
+      - empirical evaluation
+    typical_failure_modes:
+      - unintended consequences
+      - distributional blindness
+      - short-termism
+
+  - id: crisis
+    name: Crisis / Emergency
+    description: Time-critical decisions under extreme uncertainty
+    default_methods:
+      - satisficing
+      - decision-under-uncertainty
+      - premortem
+    evidence_standards:
+      - minimum viable information
+      - expert judgment
+      - rapid feedback
+    typical_failure_modes:
+      - paralysis
+      - premature closure
+      - ignoring second-order effects

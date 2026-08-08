@@ -1,0 +1,542 @@
+# Praxis Patterns Registry
+#
+# Problem-solving patterns — recurring structures for applying methods.
+# Patterns are NOT methods. They describe recurring problem structures and
+# which methods are typically composed to address them.
+
+patterns:
+
+  # ── Problem Solving ─────────────────────────────────────────────
+  - id: hypothesis-driven-diagnosis
+    category: problem-solving
+    description: Generate and test hypotheses to explain observations
+    best_for:
+      - unexpected behavior
+      - system failures
+      - medical diagnosis
+    requires:
+      - observations
+      - domain knowledge
+    methods:
+      - abductive-reasoning
+      - bayesian-reasoning
+      - causal-reasoning
+    steps:
+      - observe
+      - generate hypotheses
+      - rank by likelihood
+      - gather discriminating evidence
+      - test
+      - eliminate
+      - confirm
+    failure_modes:
+      - premature closure
+      - confirmation bias
+      - base rate neglect
+
+  - id: root-cause-analysis
+    category: problem-solving
+    description: Trace symptoms to fundamental causes
+    best_for:
+      - recurring problems
+      - systemic failures
+      - incident analysis
+    requires:
+      - incident
+      - system knowledge
+    methods:
+      - causal-reasoning
+      - five-whys
+      - fault-tree-analysis
+    steps:
+      - define problem
+      - collect data
+      - identify causal factors
+      - trace to root causes
+      - verify
+      - recommend corrective actions
+    failure_modes:
+      - stopping too early
+      - single-cause fallacy
+      - hindsight bias
+
+  - id: troubleshooting
+    category: problem-solving
+    description: Systematic isolation of fault in a known system
+    best_for:
+      - technical systems
+      - known failure modes
+      - operational issues
+    requires:
+      - system model
+      - symptoms
+    methods:
+      - bisection
+      - differential-diagnosis
+      - causal-reasoning
+    steps:
+      - identify symptom
+      - isolate subsystem
+      - test components
+      - narrow search
+      - identify fault
+      - repair
+      - verify
+    failure_modes:
+      - skipping steps
+      - assuming cause
+      - not verifying fix
+
+  - id: debugging
+    category: problem-solving
+    description: Systematic fault isolation in software systems
+    best_for:
+      - software defects
+      - unexpected behavior
+      - performance issues
+    requires:
+      - code
+      - reproduction steps
+    methods:
+      - bisection
+      - hypothesis-testing
+      - causal-reasoning
+    steps:
+      - reproduce
+      - isolate
+      - hypothesize
+      - inspect
+      - fix
+      - verify
+      - regression test
+    failure_modes:
+      - not reproducing first
+      - fixing symptoms
+      - skipping regression
+
+  # ── Decision Making ─────────────────────────────────────────────
+  - id: structured-decision
+    category: decision-making
+    description: Formal decision process for consequential choices
+    best_for:
+      - high-stakes decisions
+      - multiple stakeholders
+      - irreversible choices
+    requires:
+      - options
+      - criteria
+      - uncertainty
+    methods:
+      - multi-criteria-decision
+      - expected-utility
+      - sensitivity-analysis
+    steps:
+      - frame decision
+      - identify options
+      - define criteria
+      - evaluate options
+      - assess trade-offs
+      - perform sensitivity analysis
+      - decide
+      - monitor
+    failure_modes:
+      - narrow framing
+      - anchoring
+      - overconfidence
+
+  - id: reversible-decision
+    category: decision-making
+    description: Fast, low-ceremony decision process for reversible choices
+    best_for:
+      - low-stakes decisions
+      - reversible choices
+      - speed-critical decisions
+    requires:
+      - options
+      - reversibility
+    methods:
+      - satisficing
+      - cost-benefit-analysis
+    steps:
+      - check reversibility
+      - set time limit
+      - pick adequate option
+      - execute
+      - observe
+      - adjust
+    failure_modes:
+      - treating irreversible as reversible
+      - not observing results
+
+  - id: group-decision
+    category: decision-making
+    Description: Decision process for multiple stakeholders
+    best_for:
+      - team decisions
+      - stakeholder alignment
+      - consensus building
+    requires:
+      - stakeholders
+      - options
+      - criteria
+    methods:
+      - multi-criteria-decision
+      - dialectic
+      - argument-analysis
+    steps:
+      - align on problem
+      - generate options
+      - define criteria
+      - evaluate individually
+      - discuss differences
+      - converge
+      - commit
+    failure_modes:
+      - groupthink
+      - polarization
+      - anchoring on first option
+
+  # ── Research ────────────────────────────────────────────────────
+  - id: literature-review
+    category: research
+    description: Systematic survey of existing knowledge
+    best_for:
+      - understanding state of art
+      - identifying gaps
+      - avoiding reinvention
+    requires:
+      - research question
+      - sources
+    methods:
+      - evidence-evaluation
+      - synthesis
+      - argument-analysis
+    steps:
+      - define question
+      - search
+      - screen
+      - extract
+      - synthesize
+      - identify gaps
+      - report
+    failure_modes:
+      - selection bias
+      - superficial synthesis
+      - missing grey literature
+
+  - id: evidence-synthesis
+    category: research
+    description: Combining evidence from multiple sources
+    best_for:
+      - conflicting evidence
+      - meta-analysis
+      - triangulation
+    requires:
+      - multiple evidence sources
+      - quality assessment
+    methods:
+      - bayesian-reasoning
+      - evidence-evaluation
+      - meta-analysis
+    steps:
+      - collect evidence
+      - assess quality
+      - weight by quality
+      - combine
+      - assess consistency
+      - report confidence
+    failure_modes:
+      - combining incommensurable evidence
+      - ignoring quality differences
+      - confirmation bias
+
+  - id: knowledge-gap-analysis
+    category: research
+    description: Identifying what is not known
+    best_for:
+      - research planning
+      - risk assessment
+      - decision under uncertainty
+    requires:
+      - domain
+      - current knowledge
+    methods:
+      - completeness-check
+      - uncertainty-quantification
+      - assumption-checking
+    steps:
+      - map known
+      - identify boundaries
+      - list unknowns
+      - classify (known unknowns vs unknown unknowns)
+      - prioritize
+      - plan acquisition
+    failure_modes:
+      - unknown unknowns ignored
+      - overconfidence in "known"
+
+  # ── Architecture ────────────────────────────────────────────────
+  - id: trade-off-analysis-pattern
+    category: architecture
+    description: Structured analysis of design trade-offs
+    best_for:
+      - system design
+      - architecture decisions
+      - technology selection
+    requires:
+      - options
+      - quality attributes
+      - constraints
+    methods:
+      - trade-off-analysis
+      - multi-criteria-decision
+      - constraint-analysis
+    steps:
+      - identify quality attributes
+      - enumerate options
+      - evaluate per attribute
+      - identify conflicts
+      - analyze trade-offs
+      - decide
+      - document rationale
+    failure_modes:
+      - ignoring non-functional requirements
+      - over-optimizing one attribute
+      - not documenting rationale
+
+  - id: constraint-driven-design
+    category: architecture
+    description: Design by identifying and satisfying constraints
+    best_for:
+      - resource-constrained systems
+      - regulatory environments
+      - safety-critical systems
+    requires:
+      - constraints
+      - requirements
+    methods:
+      - constraint-analysis
+      - constrained-optimization
+      - systems-thinking
+    steps:
+      - enumerate constraints
+      - classify (hard vs soft)
+      - define feasible region
+      - generate options within region
+      - evaluate
+      - select
+    failure_modes:
+      - missing hidden constraints
+      - over-constraining
+      - treating soft constraints as hard
+
+  - id: quality-attribute-analysis
+    category: architecture
+    description: Systematic analysis of system quality attributes
+    best_for:
+      - architecture evaluation
+      - technology selection
+      - design review
+    requires:
+      - quality attributes
+      - scenarios
+      - system design
+    methods:
+      - trade-off-analysis
+      - risk-analysis
+      - scenario-planning
+    steps:
+      - identify attributes
+      - define scenarios
+      - evaluate per scenario
+      - identify risks
+      - prioritize
+      - recommend
+    failure_modes:
+      - ignoring attribute interactions
+      - vague scenarios
+      - not quantifying
+
+  # ── Design ──────────────────────────────────────────────────────
+  - id: iterative-design
+    category: design
+    description: Design through repeated cycles of prototyping and feedback
+    best_for:
+      - uncertain requirements
+      - user-facing systems
+      - novel problems
+    requires:
+      - problem
+      - feedback mechanism
+    methods:
+      - design-thinking
+      - divergent-thinking
+      - convergent-thinking
+    steps:
+      - prototype
+      - test
+      - learn
+      - refine
+      - repeat
+    failure_modes:
+      - insufficient iteration
+      - not testing with real users
+      - anchoring on first prototype
+
+  - id: constraint-based-design
+    category: design
+    description: Design by defining and satisfying constraints
+    best_for:
+      - engineering design
+      - regulatory compliance
+      - physical systems
+    requires:
+      - constraints
+      - requirements
+    methods:
+      - constraint-analysis
+      - constrained-optimization
+      - trade-off-analysis
+    steps:
+      - define constraints
+      - generate feasible designs
+      - evaluate
+      - optimize
+      - verify
+    failure_modes:
+      - missing constraints
+      - over-constrained
+      - not verifying
+
+  - id: user-centered-design
+    category: design
+    description: Design driven by user needs and feedback
+    best_for:
+      - user interfaces
+      - consumer products
+      - service design
+    requires:
+      - users
+      - context
+      - tasks
+    methods:
+      - design-thinking
+      - empathy-mapping
+      - iterative-design
+    steps:
+      - research users
+      - define needs
+      - ideate
+      - prototype
+      - test with users
+      - iterate
+    failure_modes:
+      - designing for oneself
+      - not testing with real users
+      - feature creep
+
+  # ── Evaluation ──────────────────────────────────────────────────
+  - id: option-evaluation
+    category: evaluation
+    description: Systematic comparison of options against criteria
+    best_for:
+      - vendor selection
+      - technology choice
+      - strategy comparison
+    requires:
+      - options
+      - criteria
+      - evidence
+    methods:
+      - multi-criteria-decision
+      - evidence-evaluation
+      - trade-off-analysis
+    steps:
+      - define criteria
+      - weight criteria
+      - score options
+      - analyze sensitivity
+      - recommend
+    failure_modes:
+      - criteria not independent
+      - scoring without evidence
+      - ignoring uncertainty
+
+  - id: solution-assessment
+    category: evaluation
+    description: Evaluating whether a solution meets requirements
+    best_for:
+      - acceptance testing
+      - design review
+      - quality assurance
+    requires:
+      - solution
+      - requirements
+      - test cases
+    methods:
+      - verification
+      - testing
+      - completeness-check
+    steps:
+      - define acceptance criteria
+      - test against criteria
+      - identify gaps
+      - assess severity
+      - accept/reject/rework
+    failure_modes:
+      - criteria not measurable
+      - testing only happy path
+      - ignoring non-functional
+
+  # ── Synthesis ───────────────────────────────────────────────────
+  - id: multi-source-synthesis
+    category: synthesis
+    description: Combining multiple analyses into a coherent whole
+    best_for:
+      - complex problems
+      - multiple analyses
+      - integrative decisions
+    requires:
+      - multiple analyses
+      - integration framework
+    methods:
+      - systems-thinking
+      - evidence-synthesis
+      - trade-off-analysis
+    steps:
+      - collect analyses
+      - identify conflicts
+      - reconcile
+      - integrate
+      - identify gaps
+      - synthesize
+    failure_modes:
+      - averaging incompatible results
+      - ignoring conflicts
+      - selective synthesis
+
+  - id: reconciliation
+    category: synthesis
+    description: Resolving conflicts between competing analyses
+    best_for:
+      - conflicting evidence
+      - competing models
+      - disagreement
+    requires:
+      - competing analyses
+      - conflict points
+    methods:
+      - dialectic
+      - argument-analysis
+      - evidence-evaluation
+    steps:
+      - identify conflict
+      - understand each side
+      - identify assumptions
+      - test assumptions
+      - find common ground
+      - resolve or document disagreement
+    failure_modes:
+      - false compromise
+      - ignoring stronger argument
+      - not identifying root of disagreement
